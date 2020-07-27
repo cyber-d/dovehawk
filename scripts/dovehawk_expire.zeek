@@ -239,8 +239,9 @@ hook extend_match(info: Info, s: Seen, items: set[Item])
 
 		}
 
-
-		dovehawk::register_hit(item$indicator, hit);
+                if (MISP_SUBMIT_SIGHTING) {
+		       dovehawk::register_hit(item$indicator, hit);
+		}
 		dovehawk::slack_hit(item$indicator, hit);
 		print "Intel Signature Hit ===> " + item$indicator;
 		print "   Metadata ===> " + hit;

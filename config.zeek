@@ -6,6 +6,7 @@ export {
 
 	global APIKEY = "===your misp key from Event Actions->Automation==="; 
 	global MISP_URL = "https://yourmispsite.com/"; #script will append attributes/text/download/zeek
+	global MISP_SUBMIT_SIGHTING: bool = F;
 	global SLACK_URL = ""; #optional web hook for Slack
 	global SIG_PREFIX = "MISP:"; #prefix for our signatures to hook alerts
 

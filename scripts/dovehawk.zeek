@@ -560,7 +560,9 @@ event signature_match(state: signature_state, msg: string, data: string)
 		hit += "|data:" + data;
 	}
 	
-	register_hit("%" + sig_id + "%", hit); #%wildcards required for search
+	if (MISP_SUBMIT_SIGHTING) {
+	       register_hit("%" + sig_id + "%", hit); #%wildcards required for search
+	}
 
 	print "Content Signature Hit ===> " + sig_id;
 	print "   Metadata ===> " + hit;
